@@ -288,3 +288,4 @@ resource "aws_security_group" "ecs_security_group" {
     Name = "ECS Security Group"
   }
 }
+
