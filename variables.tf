@@ -17,3 +17,5 @@ variable "public_subnet_az2_id" {}
 variable "private_data_subnet_az1_id" {}
 variable "private_data_subnet_az2_id" {}
 variable "alternative_name" {}
+variable "alb_security_group_id" {}
+variable "ecs_security_group_id" {}
