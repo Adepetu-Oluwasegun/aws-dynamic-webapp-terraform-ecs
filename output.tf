@@ -57,3 +57,11 @@ output "application_load_balancer_dns_name" {
 output "application_load_balancer_zone" {
   value = aws_lb.application_load_balancer.zone_id
 }
+
+output "domain_name" {
+  value = var.domain_name
+}
+
+output "certificate_arn" {
+  value =  aws_acm_certificate.acm_certificate.arn 
+}
