@@ -45,3 +45,15 @@ output "alb_security_group_id" {
 output "ecs_security_group_id" {
   value = aws_security_group.ecs_security_group.id
 }
+
+output "alb_target_group_arn" {
+  value =  aws_lb_target_group.alb_target_group.arn
+}
+
+output "application_load_balancer_dns_name" {
+  value = aws_lb.application_load_balancer.dns_name
+}
+
+output "application_load_balancer_zone" {
+  value = aws_lb.application_load_balancer.zone_id
+}
