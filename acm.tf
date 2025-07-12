@@ -9,11 +9,6 @@ resource "aws_acm_certificate" "acm_certificate" {
   }
 }
 
-# get details about a route 53 hosted zone
-data "aws_route53_zone" "route53_zone" {
-  name         = var.domain_name
-  private_zone = false
-}
 
 # create a record set in route 53 for domain validatation
 resource "aws_route53_record" "route53_record" {
@@ -30,9 +25,20 @@ resource "aws_route53_record" "route53_record" {
   records         = [each.value.record]
   ttl             = 60
   type            = each.value.type
-  zone_id         = data.aws_route53_zone.route53_zone.zone_id
+  zone_id         = var.hosted_zone_id
 }
 
+resource "aws_route53_record" "app_domain" {
+  zone_id = var.hosted_zone_id
+  name    = var.domain_name  
+  type    = "A"
+
+  alias {
+    name                   = aws_alb.application_load_balancer.dns_name
+    zone_id                = aws_alb.application_load_balancer.zone_id
+    evaluate_target_health = true
+  }
+}
 # validate acm certificates
 resource "aws_acm_certificate_validation" "acm_certificate_validation" {
   certificate_arn         = aws_acm_certificate.acm_certificate.arn

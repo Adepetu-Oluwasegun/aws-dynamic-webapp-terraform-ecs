@@ -47,15 +47,15 @@ output "ecs_security_group_id" {
 }
 
 output "alb_target_group_arn" {
-  value =  aws_lb_target_group.alb_target_group.arn
+  value = aws_lb_target_group.alb_target_group.arn
 }
 
 output "application_load_balancer_dns_name" {
-  value = aws_lb.application_load_balancer.dns_name
+  value = aws_alb.application_load_balancer.dns_name
 }
 
 output "application_load_balancer_zone" {
-  value = aws_lb.application_load_balancer.zone_id
+  value = aws_alb.application_load_balancer.zone_id
 }
 
 output "domain_name" {
@@ -63,7 +63,7 @@ output "domain_name" {
 }
 
 output "certificate_arn" {
-  value =  aws_acm_certificate.acm_certificate.arn 
+  value = aws_acm_certificate.acm_certificate.arn
 }
 
 output "ecs_cluster_id" {
