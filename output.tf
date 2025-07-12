@@ -65,3 +65,11 @@ output "domain_name" {
 output "certificate_arn" {
   value =  aws_acm_certificate.acm_certificate.arn 
 }
+
+output "ecs_cluster_id" {
+  value = aws_ecs_cluster.ecs_cluster.id
+}
+
+output "name" {
+  value = aws_ecs_task_definition.ecs_task_definition.arn
+}
