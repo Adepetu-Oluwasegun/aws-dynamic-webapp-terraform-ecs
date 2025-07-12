@@ -20,3 +20,4 @@ variable "alternative_name" {}
 variable "alb_security_group_id" {}
 variable "ecs_security_group_id" {}
 variable "certificate_arn" {}
+variable "container_image" {}
