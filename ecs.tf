@@ -1,6 +1,6 @@
 # create ecs cluster
 resource "aws_ecs_cluster" "ecs_cluster" {
-  name = "${jupiter}-cluster"
+  name = "${var.project_name}-cluster"
 
   setting {
     name  = "containerInsights"
@@ -10,7 +10,7 @@ resource "aws_ecs_cluster" "ecs_cluster" {
 
 # create cloudwatch log group
 resource "aws_cloudwatch_log_group" "log_group" {
-  name = "${jupiter}-task-definition"
+  name = "${var.project_name}-task-definition"
   retention_in_days = 7
 
   lifecycle {
