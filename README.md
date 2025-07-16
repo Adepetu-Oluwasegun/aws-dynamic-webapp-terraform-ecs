@@ -1,11 +1,3 @@
-# aws-dynamic-webapp-terraform-ecs
-Deploy Dynamic Web Application on AWS with Terraform, Docker, Amazon ECR, and ECS
-This project demonstrates how to deploy a containerized dynamic web application on Amazon Web Services (AWS) using Terraform, Docker, Amazon Elastic Container Registry (ECR), and Elastic Container Service (ECS with Fargate) — complete with HTTPS via ACM and custom domain DNS via Route 53.
-
-Great! Since you're also using **ACM** (for HTTPS) and **Route 53** (for DNS), here's the **updated `README.md`** with sections that reflect the use of a **custom domain name with SSL/TLS** via **ACM** and **Route 53**:
-
----
-
 # 🚀 Deploy Dynamic Web Application on AWS with Terraform, Docker, Amazon ECR, and ECS
 
 This project demonstrates how to deploy a **containerized dynamic web application** on **Amazon Web Services (AWS)** using **Terraform**, **Docker**, **Amazon Elastic Container Registry (ECR)**, and **Elastic Container Service (ECS with Fargate)** — complete with **HTTPS via ACM** and **custom domain DNS via Route 53**.
